@@ -41,7 +41,7 @@ const socialLinks = [
 
 <!-- NAVBAR (Z-10) -->
 <nav class="border-border bg-base/90 fixed top-0 right-0 left-0 z-10 w-full border-b-2 backdrop-blur-md">
-	<div class="container mx-auto px-4 md:px-8">
+	<div class="container">
 		<div class="flex h-16 items-center justify-between gap-4">
 			<Brand />
 
@@ -62,7 +62,7 @@ const socialLinks = [
 			<div class="flex items-center gap-2">
 				<button
 					onclick="window.dispatchEvent(new CustomEvent('open-palette'))"
-					class="border-border/20 hover:border-accent hidden items-center gap-2 border px-3 py-1 transition-all lg:flex"
+					class="border-border/20 hover:border-accent hidden items-center gap-2 border px-3 py-1.5 transition-all lg:flex"
 				>
 					<kbd class="text-[9px]">CTRL + K</kbd>
 				</button>
@@ -89,8 +89,8 @@ const socialLinks = [
 				</div>
 
 				<button id="mobile-menu-toggle" class="tui-btn-primary px-4 py-1.5 lg:hidden">
-					<span id="menu-label-open">[MENU]</span>
-					<span id="menu-label-close" class="hidden">[CLOSE]</span>
+					<span id="label-open">[MENU]</span>
+					<span id="label-close" class="hidden">[CLOSE]</span>
 				</button>
 			</div>
 		</div>
@@ -101,7 +101,7 @@ const socialLinks = [
 		id="mobile-menu"
 		class="bg-base border-border fixed inset-0 z-50 hidden h-screen w-screen flex-col border-t-2 lg:hidden"
 	>
-		<div class="no-scrollbar container mx-auto flex h-full flex-col gap-8 overflow-y-auto px-6 pt-24 pb-12">
+		<div class="no-scrollbar container flex h-full flex-col gap-8 overflow-y-auto px-6 pt-24 pb-12">
 			<div class="tui-window shrink-0">
 				<div class="tui-window-header">
 					<span>DIRECTORY_NAV.SYS</span>
@@ -170,8 +170,8 @@ const socialLinks = [
 	const menuToggle = document.getElementById("mobile-menu-toggle");
 	const mobileClose = document.getElementById("mobile-close-btn");
 	const mobileMenu = document.getElementById("mobile-menu");
-	const labelOpen = document.getElementById("menu-label-open");
-	const labelClose = document.getElementById("menu-label-close");
+	const lOpen = document.getElementById("label-open");
+	const lClose = document.getElementById("label-close");
 
 	function toggleMenu() {
 		if (!mobileMenu) return;
@@ -179,14 +179,14 @@ const socialLinks = [
 		if (isHidden) {
 			mobileMenu.classList.remove("hidden");
 			mobileMenu.classList.add("flex");
-			labelOpen?.classList.add("hidden");
-			labelClose?.classList.remove("hidden");
+			lOpen?.classList.add("hidden");
+			lClose?.classList.remove("hidden");
 			document.body.style.overflow = "hidden";
 		} else {
 			mobileMenu.classList.add("hidden");
 			mobileMenu.classList.remove("flex");
-			labelOpen?.classList.remove("hidden");
-			labelClose?.classList.add("hidden");
+			lOpen?.classList.remove("hidden");
+			lClose?.classList.add("hidden");
 			document.body.style.overflow = "";
 		}
 	}
