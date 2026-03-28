@@ -17,7 +17,7 @@ const i18n = {
 };
 ---
 
-<div class={`relative flex ${height} w-full flex-col overflow-hidden bg-base font-mono`}>
+<div class={`relative flex ${height} w-full flex-col overflow-hidden bg-base font-mono min-h-0`}>
 	<!-- Inner Header -->
 	<div class="border-border/5 bg-primary/5 flex items-center justify-between border-b px-4 py-2">
 		<div class="flex items-center gap-4">
@@ -29,7 +29,7 @@ const i18n = {
 		<span id="live-clock" class="text-content/30 text-[10px] font-bold"></span>
 	</div>
 
-	<div class="custom-scrollbar flex w-full flex-1 flex-col overflow-y-auto p-6">
+	<div class="custom-scrollbar min-h-0 flex w-full flex-1 flex-col overflow-y-auto p-6">
 		<div id="typewriter-output" class="flex w-full flex-col gap-1.5 text-xs md:text-sm"></div>
 
 		<p class="mt-4 flex w-full items-center gap-3 text-nowrap">
@@ -56,9 +56,10 @@ const i18n = {
 <script define:vars={{ terminalLines, speed, delay, i18n }} is:inline>
 	const output = document.getElementById("typewriter-output");
 	const liveClockEl = document.getElementById("live-clock");
+	const scrollContainer = output?.parentElement;
 	const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-	if (output) {
+	if (output && scrollContainer) {
 		function updateClock() {
 			const now = new Date();
 			liveClockEl.textContent = now.toLocaleTimeString([], { hour12: false });
@@ -76,11 +77,15 @@ const i18n = {
 			return now.toLocaleTimeString([], { hour12: false, hour: "2-digit", minute: "2-digit", second: "2-digit" });
 		}
 
+		function scrollToBottom() {
+			scrollContainer.scrollTop = scrollContainer.scrollHeight;
+		}
+
 		function createLineElement() {
 			const el = document.createElement("div");
 			el.className = "line text-content/60 break-all leading-relaxed font-medium";
 			output.appendChild(el);
-			output.parentElement.scrollTop = output.parentElement.scrollHeight;
+			scrollToBottom();
 			return el;
 		}
 
@@ -92,6 +97,7 @@ const i18n = {
 				currentEl.textContent = `[${timestamp()}] ${text}`;
 				currentEl = null;
 				lineIndex++;
+				scrollToBottom();
 				setTimeout(processNextLine, delay / 2);
 				return;
 			}
@@ -100,6 +106,7 @@ const i18n = {
 				if (charIndex === 0) currentEl.textContent = `[${timestamp()}] `;
 				currentEl.textContent += text[charIndex];
 				charIndex++;
+				scrollToBottom();
 				setTimeout(() => typeLine(text), speed);
 			} else {
 				currentEl = null;
@@ -118,6 +125,7 @@ const i18n = {
 					"mt-6 mb-2 text-accent font-bold text-sm border-l-2 border-accent pl-3 bg-accent/5 py-1";
 				cmd.textContent = `${i18n.path} ${line}`;
 				output.appendChild(cmd);
+				scrollToBottom();
 				lineIndex++;
 				setTimeout(processNextLine, 300);
 			} else {
