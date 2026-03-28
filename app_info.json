@@ -2,7 +2,7 @@
 	"app": {
 		"name": "reasvyn",
 		"codename": "CORE_TUI",
-		"version": "v0.7.0",
+		"version": "v0.7.1",
 		"description": "Terminal-themed Personal Webfolio and Technical Blog",
 		"license": "MIT",
 		"repository": "https://github.com/reasvyn/reasvyn.github.io"
