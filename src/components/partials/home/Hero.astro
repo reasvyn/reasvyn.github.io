@@ -69,8 +69,8 @@ const locale = Astro.currentLocale || "en";
 	</div>
 
 	<!-- RIGHT SIDE (50%) -->
-	<div class="flex w-full items-stretch justify-center lg:justify-end" data-aos="fade-left">
-		<div class="tui-window flex h-full w-full flex-col">
+	<div class="flex w-full items-start justify-center lg:justify-end" data-aos="fade-left">
+		<div class="tui-window flex w-full flex-col h-[450px] lg:h-[600px]">
 			<div class="tui-window-header !bg-t-blue">
 				<div class="flex items-center gap-2">
 					<span class="icon-[tabler--terminal-2] size-4"></span>
@@ -82,7 +82,7 @@ const locale = Astro.currentLocale || "en";
 					<div class="size-1.5 rounded-full bg-white"></div>
 				</div>
 			</div>
-			<FakeTerminal height="flex-1 h-[400px] lg:h-[550px]" />
+			<FakeTerminal height="flex-1" />
 			<div class="bg-primary/5 border-border/10 flex items-center justify-between border-t p-3">
 				<span class="text-content/30 text-[8px] font-bold tracking-tighter uppercase"
 					>Node: Main_Terminal_01 // Auth: Administrator</span
