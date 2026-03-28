@@ -4,7 +4,7 @@
 
 ### 1.1 Purpose
 
-This document provides a comprehensive architectural overview of the `reasnov.github.io` web application. It describes the design decisions, component organization, and technical standards used to ensure maintainability, scalability, and performance.
+This document provides a comprehensive architectural overview of the `reasvyn.github.io` web application. It describes the design decisions, component organization, and technical standards used to ensure maintainability, scalability, and performance.
 
 ### 1.2 Scope
 

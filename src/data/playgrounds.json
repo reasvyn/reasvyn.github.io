@@ -10,21 +10,21 @@
 		"title": "CSS Art: Terminal CRT",
 		"description": "A pure CSS experiment to recreate retro CRT monitor flicker and scanline effects.",
 		"tags": ["CSS", "Retro"],
-		"link": "https://codepen.io/reasnov/pen/demo1",
+		"link": "https://codepen.io/reasvyn/pen/demo1",
 		"image": "https://placehold.co/600x400/000000/FFFFFF/png?text=CRT+Effect"
 	},
 	{
 		"title": "JS Particle Engine",
 		"description": "Mini canvas-based particle system with physics and mouse interaction.",
 		"tags": ["Canvas", "Algorithm"],
-		"link": "https://github.com/reasnov/particle-js",
+		"link": "https://github.com/reasvyn/particle-js",
 		"image": "https://placehold.co/600x400/000000/FFFFFF/png?text=Particles"
 	},
 	{
 		"title": "Algorithm Visualizer",
 		"description": "Visualizing sorting algorithms step-by-step for educational purposes.",
 		"tags": ["React", "Logic"],
-		"link": "https://github.com/reasnov/algo-viz",
+		"link": "https://github.com/reasvyn/algo-viz",
 		"image": "https://placehold.co/600x400/000000/FFFFFF/png?text=Algo+Viz"
 	}
 ]

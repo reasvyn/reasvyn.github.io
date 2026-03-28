@@ -10,7 +10,7 @@ describe("AppInfo Utility", () => {
 
 	it("should retrieve author handle", () => {
 		const handle = app_info("author.handle");
-		expect(handle).toBe("@reasnov");
+		expect(handle).toBe("@reasvyn");
 	});
 
 	it("should return default value for non-existent keys", () => {

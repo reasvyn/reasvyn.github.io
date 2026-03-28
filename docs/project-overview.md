@@ -1,8 +1,8 @@
-# Project Overview: reasnov.github.io
+# Project Overview: reasvyn.github.io
 
 ## 1. Introduction
 
-`reasnov.github.io` is a modern, high-performance personal portfolio and technical blog platform. It serves as a professional showcase for **Andreas Novyanto (Reas Vyn)**, a Fullstack Web Developer.
+`reasvyn.github.io` is a modern, high-performance personal portfolio and technical blog platform. It serves as a professional showcase for **Andreas Novyanto (Reas Vyn)**, a Fullstack Web Developer.
 
 The project is uniquely designed with a **Terminal UI (TUI)** aesthetic, combining the nostalgic feel of a command-line interface with modern web performance and responsiveness.
 

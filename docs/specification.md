@@ -4,7 +4,7 @@
 
 ### 1.1 Purpose
 
-Specifies the requirements for the `reasnov.github.io` portfolio and blog.
+Specifies the requirements for the `reasvyn.github.io` portfolio and blog.
 
 ### 1.2 Scope
 
