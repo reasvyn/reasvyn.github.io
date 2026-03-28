@@ -2,20 +2,20 @@
 	"app": {
 		"name": "reasnov",
 		"codename": "CORE_TUI",
-		"version": "v0.6.1",
+		"version": "v0.7.0",
 		"description": "Terminal-themed Personal Webfolio and Technical Blog",
 		"license": "MIT",
-		"repository": "https://github.com/reasnov/reasnov.github.io"
+		"repository": "https://github.com/reasvyn/reasvyn.github.io"
 	},
 	"author": {
-		"name": "Andreas Novyanto (Reas Vyn)",
+		"name": "Reas Vyn",
 		"role": "Fullstack Web Developer",
-		"handle": "@reasnov",
-		"email": "reasnov.official@gmail.com",
+		"handle": "@reasvyn",
+		"email": "reasvyn@gmail.com",
 		"links": {
-			"github": "https://github.com/reasnov",
-			"linkedin": "https://linkedin.com/in/reasnov",
-			"x": "https://x.com/reasnov"
+			"github": "https://github.com/reasvyn",
+			"linkedin": "https://linkedin.com/in/reasvyn",
+			"instagram": "https://instagram.com/reasvyn"
 		}
 	},
 	"credits": {
