@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+@theme {
+  --color-accent: #2ea44f;
+  --color-accent-light: #3fb950;
+}
+
+[data-theme="dark"] {
+  --color-surface: #0d1117;
+  --color-surface-light: #161b22;
+  --color-surface-lighter: #21262d;
+  --color-muted: #8b949e;
+  --color-foreground: #f0f6fc;
+  --color-border: #30363d;
+}
+
+[data-theme="light"] {
+  --color-surface: #ffffff;
+  --color-surface-light: #f6f8fa;
+  --color-surface-lighter: #eaeef2;
+  --color-muted: #656d76;
+  --color-foreground: #1f2328;
+  --color-border: #d0d7de;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-surface);
+  color: var(--color-muted);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Force light mode rendering on GitHub stats images */
+[data-theme="light"] .gh-stat {
+  filter: brightness(0.9) saturate(0.8);
+  border-radius: 12px;
+  background: #fff;
+}
