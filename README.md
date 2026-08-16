@@ -1,43 +1,107 @@
-# Svelte + Vite
+# Reas Vyn
 
-This template should help get you started developing with Svelte in Vite.
+### Building quietly, for a faithful impact.
 
-## Recommended IDE Setup
+Fullstack Developer crafting digital ecosystems that are secure, sustainable, and scalable. Translating reliable logic into systems that serve with integrity—since 2020.
 
-[VS Code](https://code.visualstudio.com/) + [Svelte](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode).
+<p align="center">
+  <img src="https://img.shields.io/badge/Ecosystem-Secure%20%7C%20Sustain%20%7C%20Scalable-2ea44f" alt="Ecosystem">
+  <img src="https://img.shields.io/badge/Status-Open%20for%20Projects-success?logo=workplace" alt="Open for Projects">
+  <img src="https://img.shields.io/badge/Role-Fullstack%20Developer-blue" alt="Fullstack Role">
+  <img src="https://img.shields.io/github/stars/reasvyn?style=flat-square&label=Total%20Stars&color=yellow" alt="Total Stars">
+  <img src="https://komarev.com/ghpvc/?username=reasvyn&color=blueviolet&style=flat-square&label=Profile%20Views" alt="Profile Views">
+</p>
 
-## Need an official Svelte framework?
+---
 
-Check out [SvelteKit](https://github.com/sveltejs/kit#readme), which is also powered by Vite. Deploy anywhere with its serverless-first approach and adapt to various platforms, with out of the box support for TypeScript, SCSS, and Less, and easily-added support for mdsvex, GraphQL, PostCSS, Tailwind CSS, and more.
+## Philosophy
 
-## Technical considerations
+| Principle | Description |
+|-----------|-------------|
+| **🛡️ Secure** | Building with integrity. Ensuring a safe harbor for data and users. Every line of code is written to protect what is entrusted to the system. |
+| **🌱 Sustain** | Coding for the long run. Prioritizing health and clean architecture. Systems intended to thrive and maintain stability over time. |
+| **🚀 Scalable** | Growing with order. Ensuring that as an ecosystem expands, it remains efficient, orderly, and true to its original purpose. |
 
-**Why use this over SvelteKit?**
+---
 
-- It brings its own routing solution which might not be preferable for some users.
-- It is first and foremost a framework that just happens to use Vite under the hood, not a Vite app.
+## Tech Stack
 
-This template contains as little as possible to get started with Vite + Svelte, while taking into account the developer experience with regards to HMR and intellisense. It demonstrates capabilities on par with the other `create-vite` templates and is a good starting point for beginners dipping their toes into a Vite + Svelte project.
+| Category | Technologies |
+|----------|--------------|
+| **Core Logic** | Rust, TypeScript, PHP |
+| **Frameworks** | Laravel, Next.js, Astro, Svelte |
+| **Databases** | PostgreSQL, Redis, Event Sourcing |
+| **Infrastructure** | Docker, AWS, Linux |
+| **Practices** | Clean Architecture, DDD, TDD, CI/CD |
 
-Should you later need the extended capabilities and extensibility provided by SvelteKit, the template has been structured similarly to SvelteKit so that it is easy to migrate.
+---
 
-**Why include `.vscode/extensions.json`?**
+## Featured Projects
 
-Other templates indirectly recommend extensions via the README, but this file allows VS Code to prompt the user to install the recommended extension upon opening the project.
+| Project | Description | Stack |
+|---------|-------------|-------|
+| **[DevBook](https://github.com/reasvyn/devbook)** | Markdown-based learning library for developers — 21 subjects from math & CS fundamentals to software engineering, infrastructure, AI/ML, career growth, and philosophy. Zero dependencies, no build step, open any `.md` file to start reading. | `Markdown` `Git` |
 
-**Why enable `checkJs` in the JS template?**
+---
 
-It is likely that most cases of changing variable types in runtime are likely to be accidental, rather than deliberate. This provides advanced typechecking out of the box. Should you like to take advantage of the dynamically-typed nature of JavaScript, it is trivial to change the configuration.
+## Highlights
 
-**Why is HMR not preserving my local component state?**
+- **Stewardship** — Delivering production-grade systems with a focus on responsibility and reliability since 2020.
+- **Independent Path** — Operating as a solopreneur: full ownership from architecture to deployment on every project.
+- **Open Ecosystems** — Building in public, contributing precise and stable logic to the broader digital commons.
 
-HMR state preservation comes with a number of gotchas! It has been disabled by default in both `svelte-hmr` and `@sveltejs/vite-plugin-svelte` due to its often surprising behavior. You can read the details [here](https://github.com/sveltejs/svelte-hmr/tree/master/packages/svelte-hmr#preservation-of-local-state).
+---
 
-If you have state that's important to retain within a component, consider creating an external store which would not be replaced by HMR.
+## GitHub Insights
 
-```js
-// store.js
-// An extremely simple external store
-import { writable } from 'svelte/store'
-export default writable(0)
-```
+<table width="100%" align="center">
+  <tr>
+    <td width="50%" align="center">
+      <img
+        src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=reasvyn&theme=dark"
+        alt="reasvyn's GitHub profile"
+      />
+    </td>
+    <td width="50%" align="center">
+      <img
+        src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=reasvyn&theme=dark"
+        alt="reasvyn's GitHub stats"
+      />
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" align="center">
+      <img
+        src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=reasvyn&theme=dark"
+        alt="reasvyn's top languages by repo"
+      />
+    </td>
+    <td width="50%" align="center">
+      <img
+        src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=reasvyn&theme=dark"
+        alt="reasvyn's top languages by commit"
+      />
+    </td>
+  </tr>
+</table>
+
+## GitHub Trophies
+
+<img width="100%" height="auto" src="https://github-trophies.vercel.app/?username=reasvyn&theme=darkhub&no-frame=true&no-bg=true&margin-w=4" alt="reasvyn's GitHub trophies" />
+
+---
+
+## Let's Connect
+
+- **Website**: [reasvyn.web.id](https://reasvyn.web.id)
+- **LinkedIn**: [Reas Vyn](https://www.linkedin.com/in/reasvyn)
+- **Instagram**: [@reasvyn](https://instagram.com/reasvyn)
+- **Email**: [reasvyn@gmail.com](mailto:reasvyn@gmail.com)
+
+---
+
+*Following the quietest guidance to build a faithful impact.* 🌿
+
+---
+
+### Thanks for supporting me on [SociaBuzz](https://sociabuzz.com/reasvyn/tribe)
