@@ -266,14 +266,15 @@
   const trophyTheme = $derived(theme === 'dark' ? 'darkhub' : 'flat');
 
   const statsUrl = $derived(
-    `https://github-readme-stats-sigma-five.vercel.app/api?username=reasvyn&show_icons=true&count_private=true&hide_border=true&bg_color=${bgColor}&text_color=${textColor}&icon_color=2ea44f&title_color=2ea44f`
+    `https://github-readme-stats-eight-theta.vercel.app/api?username=reasvyn&show_icons=true&count_private=true&hide_border=true&bg_color=${bgColor}&text_color=${textColor}&icon_color=2ea44f&title_color=2ea44f`
   );
   const topLangsUrl = $derived(
-    `https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=reasvyn&layout=compact&hide_border=true&bg_color=${bgColor}&text_color=${textColor}&title_color=2ea44f`
+    `https://github-readme-stats-eight-theta.vercel.app/api/top-langs/?username=reasvyn&layout=compact&hide_border=true&bg_color=${bgColor}&text_color=${textColor}&title_color=2ea44f`
   );
   const streakUrl = $derived(
     `https://streak-stats.demolab.com/?user=reasvyn&hide_border=true&background=${bgColor}&stroke=2ea44f&ring=2ea44f&fire=2ea44f&currStreakNum=${textColor}&sideNums=${textColor}&currStreakLabel=2ea44f&sideLabels=${mutedColor}&dates=${mutedColor}`
   );
+  const chartUrl = $derived('https://ghchart.rshah.org/2ea44f/reasvyn');
   const trophiesUrl = $derived(
     `https://github-trophies.vercel.app/?username=reasvyn&theme=${trophyTheme}&no-frame=true&no-bg=true&margin-w=4`
   );
@@ -552,17 +553,28 @@
               loading="lazy"
             />
           </div>
-          <div class="card-hover reveal stagger-3 flex justify-center items-center rounded-xl border p-4 backdrop-blur-md sm:p-6 sm:col-span-2" style="border-color: var(--color-border); background-color: color-mix(in srgb, var(--color-surface-light) 90%, transparent);">
+          <div class="card-hover reveal stagger-3 flex justify-center items-center rounded-xl border p-4 backdrop-blur-md sm:p-6" style="border-color: var(--color-border); background-color: color-mix(in srgb, var(--color-surface-light) 90%, transparent);">
             <img
               src={topLangsUrl}
               alt="Top Languages"
-              class="gh-stat w-full max-w-lg h-auto"
+              class="gh-stat w-full max-w-md h-auto"
               loading="lazy"
             />
           </div>
+          <div class="card-hover reveal stagger-4 flex flex-col justify-center items-center rounded-xl border p-4 backdrop-blur-md sm:p-6 overflow-hidden" style="border-color: var(--color-border); background-color: color-mix(in srgb, var(--color-surface-light) 90%, transparent);">
+            <h3 class="mb-3 text-xs font-semibold uppercase tracking-wider" style="color: var(--color-muted);">Annual Contribution Matrix</h3>
+            <div class="w-full overflow-x-auto flex justify-center">
+              <img
+                src={chartUrl}
+                alt="GitHub Contribution Activity Chart"
+                class="gh-stat min-w-[500px] w-full max-w-md h-auto"
+                loading="lazy"
+              />
+            </div>
+          </div>
         </div>
 
-        <div class="card-hover reveal stagger-4 mt-8 rounded-xl border p-4 backdrop-blur-md sm:p-6 flex flex-col items-center" style="border-color: var(--color-border); background-color: color-mix(in srgb, var(--color-surface-light) 90%, transparent);">
+        <div class="card-hover reveal stagger-5 mt-8 rounded-xl border p-4 backdrop-blur-md sm:p-6 flex flex-col items-center" style="border-color: var(--color-border); background-color: color-mix(in srgb, var(--color-surface-light) 90%, transparent);">
           <h3 class="mb-4 text-sm font-semibold uppercase tracking-wider" style="color: var(--color-muted);">GitHub Trophies</h3>
           <img
             src={trophiesUrl}
