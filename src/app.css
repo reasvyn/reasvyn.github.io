@@ -37,9 +37,9 @@ body {
   transition: background-color 0.3s, color 0.3s;
 }
 
-/* Force light mode rendering on GitHub stats images */
-[data-theme="light"] .gh-stat {
-  filter: brightness(0.9) saturate(0.8);
-  border-radius: 12px;
-  background: #fff;
+.gh-stat {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
 }

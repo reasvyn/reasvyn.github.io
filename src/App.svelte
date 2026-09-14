@@ -25,10 +25,11 @@
   }
 
   const navLinks = [
-    { href: '#about', label: 'About' },
-    { href: '#tech', label: 'Tech' },
+    { href: '#philosophy', label: 'Philosophy' },
+    { href: '#tech', label: 'Tech Stack' },
+    { href: '#projects', label: 'Projects' },
     { href: '#highlights', label: 'Highlights' },
-    { href: '#stats', label: 'Stats' },
+    { href: '#insights', label: 'Insights' },
     { href: '#connect', label: 'Connect' },
   ];
 
@@ -47,7 +48,7 @@
     {
       icon: '🌱',
       title: 'Sustain',
-      desc: 'Coding for the long run. Prioritizing health and clean architecture. I build systems intended to thrive and maintain their stability over time.',
+      desc: 'Coding for the long run. Prioritizing health and clean architecture. Systems intended to thrive and maintain stability over time.',
     },
     {
       icon: '🚀',
@@ -58,35 +59,66 @@
 
   const techStacks = [
     { category: 'Core Logic', items: ['Rust', 'TypeScript', 'PHP'] },
-    { category: 'Frameworks', items: ['Laravel', 'NextJS', 'Astro', 'Svelte'] },
+    { category: 'Frameworks', items: ['Laravel', 'Next.js', 'Astro', 'Svelte'] },
     { category: 'Databases', items: ['PostgreSQL', 'Redis', 'Event Sourcing'] },
     { category: 'Infrastructure', items: ['Docker', 'AWS', 'Linux'] },
+    { category: 'Practices', items: ['Clean Architecture', 'DDD', 'TDD', 'CI/CD'] },
+  ];
+
+  const featuredProjects = [
+    {
+      title: 'DevBook',
+      url: 'https://github.com/reasvyn/devbook',
+      desc: 'Markdown-based learning library for developers — 21 subjects from math & CS fundamentals to software engineering, infrastructure, AI/ML, career growth, and philosophy. Zero dependencies, no build step, open any .md file to start reading.',
+      tags: ['Markdown', 'Git'],
+      badge: 'Featured',
+    },
   ];
 
   const highlights = [
-    { emoji: '🕊️', title: 'Stewardship', desc: 'Delivering production-grade systems with a focus on responsibility and reliability since 2020.' },
-    { emoji: '🏗️', title: 'Independent Path', desc: 'Operating as a solopreneur — full ownership from architecture to deployment on every project.' },
-    { emoji: '🌐', title: 'Open Ecosystems', desc: 'Building in public, contributing precise and stable logic to the broader digital commons.' },
+    {
+      emoji: '🕊️',
+      title: 'Stewardship',
+      desc: 'Delivering production-grade systems with a focus on responsibility and reliability since 2020.',
+    },
+    {
+      emoji: '🏗️',
+      title: 'Independent Path',
+      desc: 'Operating as a solopreneur: full ownership from architecture to deployment on every project.',
+    },
+    {
+      emoji: '🌐',
+      title: 'Open Ecosystems',
+      desc: 'Building in public, contributing precise and stable logic to the broader digital commons.',
+    },
   ];
 
   const socialLinks = [
-    { name: 'LinkedIn', url: 'https://www.linkedin.com/in/reasvyn' },
-    { name: 'Instagram', url: 'https://instagram.com/reasvyn' },
-    { name: 'Email', url: 'mailto:reasvyn@gmail.com' },
+    { name: 'Website', url: 'https://reasvyn.web.id', handle: 'reasvyn.web.id' },
+    { name: 'LinkedIn', url: 'https://www.linkedin.com/in/reasvyn', handle: 'Reas Vyn' },
+    { name: 'Instagram', url: 'https://instagram.com/reasvyn', handle: '@reasvyn' },
+    { name: 'Email', url: 'mailto:reasvyn@gmail.com', handle: 'reasvyn@gmail.com' },
   ];
+
+  const summaryTheme = $derived(theme === 'dark' ? 'dark' : 'default');
+  const trophyTheme = $derived(theme === 'dark' ? 'darkhub' : 'flat');
 </script>
 
 <div class="min-h-screen" style="background-color: var(--color-surface);">
   <!-- Navigation -->
   <nav class="sticky top-0 z-50 border-b" style="background-color: color-mix(in srgb, var(--color-surface) 80%, transparent); border-color: var(--color-border); backdrop-filter: blur(12px);">
     <div class="mx-auto flex max-w-5xl items-center justify-between px-4 py-3 sm:px-6 sm:py-4">
-      <a href="/" class="text-lg font-semibold" style="color: var(--color-foreground);">Reas Vyn</a>
+      <a href="/" class="text-lg font-semibold tracking-tight" style="color: var(--color-foreground);">
+        Reas Vyn
+      </a>
 
       <!-- Desktop nav + theme toggle -->
       <div class="hidden items-center gap-6 sm:flex">
-          {#each navLinks as link}
-            <a href={link.href} class="text-sm transition-colors" style="color: var(--color-muted);">{link.label}</a>
-          {/each}
+        {#each navLinks as link}
+          <a href={link.href} class="text-sm font-medium transition-colors hover:text-(--color-accent)" style="color: var(--color-muted);">
+            {link.label}
+          </a>
+        {/each}
         <button
           onclick={toggleTheme}
           class="ml-2 flex h-8 w-8 items-center justify-center rounded-lg text-sm transition-colors"
@@ -138,7 +170,7 @@
             <a
               href={link.href}
               onclick={closeMenu}
-              class="block rounded-lg px-3 py-2 text-sm transition-colors"
+              class="block rounded-lg px-3 py-2 text-sm font-medium transition-colors hover:text-(--color-accent)"
               style="color: var(--color-muted);"
             >{link.label}</a>
           {/each}
@@ -149,14 +181,15 @@
 
   <main class="mx-auto max-w-5xl px-4 sm:px-6">
     <!-- Hero -->
-    <section class="flex min-h-[80vh] flex-col items-center justify-center text-center">
+    <section class="flex min-h-[85vh] flex-col items-center justify-center text-center py-12">
+      <p class="mb-3 text-sm font-semibold tracking-wider uppercase" style="color: var(--color-accent);">
+        Building quietly, for a faithful impact.
+      </p>
       <h1 class="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl" style="color: var(--color-foreground);">
         Hello, I'm <span style="color: var(--color-accent);">Reas Vyn</span>
       </h1>
-      <p class="mt-4 max-w-2xl text-base leading-relaxed sm:text-lg" style="color: var(--color-muted);">
-        <span class="italic" style="color: var(--color-foreground);">"Building quietly, for a faithful impact."</span>
-        <br />
-        As a <strong style="color: var(--color-foreground);">Coder</strong>, my focus is on crafting digital ecosystems that are safe, honest, and enduring.
+      <p class="mt-5 max-w-2xl text-base leading-relaxed sm:text-lg" style="color: var(--color-muted);">
+        <strong style="color: var(--color-foreground);">Fullstack Developer</strong> crafting digital ecosystems that are secure, sustainable, and scalable. Translating reliable logic into systems that serve with integrity—since 2020.
       </p>
 
       <div class="mt-8 flex flex-wrap justify-center gap-3">
@@ -171,21 +204,25 @@
         {/each}
       </div>
 
-      <div class="mt-4 flex flex-wrap justify-center gap-2">
+      <div class="mt-4 flex flex-wrap justify-center items-center gap-2">
         <img src="https://img.shields.io/github/stars/reasvyn?style=flat-square&label=Total%20Stars&color=yellow" alt="Total Stars" class="h-5" />
         <img src="https://komarev.com/ghpvc/?username=reasvyn&color=blueviolet&style=flat-square&label=Profile%20Views" alt="Profile Views" class="h-5" />
       </div>
 
-      <a href="#about" class="mt-10 animate-bounce text-2xl transition-colors" style="color: var(--color-muted);">↓</a>
+      <a href="#philosophy" class="mt-12 animate-bounce text-2xl transition-colors" style="color: var(--color-muted);" aria-label="Scroll down">↓</a>
     </section>
 
-    <div class="border-t" style="border-color: var(--color-border);" id="about"></div>
+    <div class="border-t" style="border-color: var(--color-border);" id="philosophy"></div>
 
-    <!-- Principles -->
+    <!-- Philosophy -->
     <section class="py-16 sm:py-24">
+      <div class="mb-10 text-center">
+        <h2 class="text-2xl font-bold sm:text-3xl" style="color: var(--color-foreground);">Philosophy</h2>
+        <p class="mt-2 text-sm" style="color: var(--color-muted);">Core principles guiding every architectural and implementation decision</p>
+      </div>
       <div class="grid gap-6 sm:grid-cols-2 md:grid-cols-3">
         {#each principles as principle}
-          <div class="group rounded-xl border p-6 transition-all sm:p-8" style="border-color: var(--color-border); background-color: var(--color-surface-light);">
+          <div class="group rounded-xl border p-6 transition-all hover:border-(--color-accent) sm:p-8" style="border-color: var(--color-border); background-color: var(--color-surface-light);">
             <div class="mb-4 text-3xl">{principle.icon}</div>
             <h3 class="mb-3 text-xl font-semibold" style="color: var(--color-foreground);">{principle.title}</h3>
             <p class="text-sm leading-relaxed" style="color: var(--color-muted);">{principle.desc}</p>
@@ -196,13 +233,16 @@
 
     <div class="border-t" style="border-color: var(--color-border);" id="tech"></div>
 
-    <!-- Tech Stacks -->
+    <!-- Tech Stack -->
     <section class="py-16 sm:py-24">
-      <h2 class="mb-10 text-center text-2xl font-bold sm:text-3xl" style="color: var(--color-foreground);">Main Tech Stacks</h2>
-      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <div class="mb-10 text-center">
+        <h2 class="text-2xl font-bold sm:text-3xl" style="color: var(--color-foreground);">Tech Stack</h2>
+        <p class="mt-2 text-sm" style="color: var(--color-muted);">Tools, technologies, and practices used across the development lifecycle</p>
+      </div>
+      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
         {#each techStacks as stack}
-          <div class="rounded-xl border p-5 sm:p-6" style="border-color: var(--color-border); background-color: var(--color-surface-light);">
-            <h3 class="mb-4 text-sm font-semibold uppercase tracking-wider" style="color: var(--color-accent);">{stack.category}</h3>
+          <div class="rounded-xl border p-5 sm:p-6 transition-all" style="border-color: var(--color-border); background-color: var(--color-surface-light);">
+            <h3 class="mb-4 text-xs font-semibold uppercase tracking-wider" style="color: var(--color-accent);">{stack.category}</h3>
             <ul class="space-y-2">
               {#each stack.items as item}
                 <li class="flex items-center gap-2 text-sm" style="color: var(--color-muted);">
@@ -216,11 +256,63 @@
       </div>
     </section>
 
+    <div class="border-t" style="border-color: var(--color-border);" id="projects"></div>
+
+    <!-- Featured Projects -->
+    <section class="py-16 sm:py-24">
+      <div class="mb-10 text-center">
+        <h2 class="text-2xl font-bold sm:text-3xl" style="color: var(--color-foreground);">Featured Projects</h2>
+        <p class="mt-2 text-sm" style="color: var(--color-muted);">Curated open source work and digital platforms</p>
+      </div>
+      <div class="grid gap-6">
+        {#each featuredProjects as project}
+          <div class="rounded-xl border p-6 transition-all sm:p-8 hover:border-(--color-accent)" style="border-color: var(--color-border); background-color: var(--color-surface-light);">
+            <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+              <div class="flex items-center gap-3">
+                <h3 class="text-xl font-bold" style="color: var(--color-foreground);">
+                  {project.title}
+                </h3>
+                <span class="inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-semibold" style="background-color: color-mix(in srgb, var(--color-accent) 15%, transparent); color: var(--color-accent);">
+                  {project.badge}
+                </span>
+              </div>
+              <a
+                href={project.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-1.5 text-sm font-medium transition-colors hover:underline"
+                style="color: var(--color-accent);"
+              >
+                View on GitHub
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4">
+                  <path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h4a.75.75 0 010 1.5h-4z" clip-rule="evenodd" />
+                  <path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.156 8.35a.75.75 0 00-.053 1.06z" clip-rule="evenodd" />
+                </svg>
+              </a>
+            </div>
+            <p class="text-sm leading-relaxed mb-6" style="color: var(--color-muted);">
+              {project.desc}
+            </p>
+            <div class="flex flex-wrap gap-2">
+              {#each project.tags as tag}
+                <span class="inline-flex items-center rounded-md px-2.5 py-1 text-xs font-mono font-medium" style="background-color: var(--color-surface-lighter); color: var(--color-foreground);">
+                  `{tag}`
+                </span>
+              {/each}
+            </div>
+          </div>
+        {/each}
+      </div>
+    </section>
+
     <div class="border-t" style="border-color: var(--color-border);" id="highlights"></div>
 
     <!-- Highlights -->
     <section class="py-16 sm:py-24">
-      <h2 class="mb-10 text-center text-2xl font-bold sm:text-3xl" style="color: var(--color-foreground);">Highlights</h2>
+      <div class="mb-10 text-center">
+        <h2 class="text-2xl font-bold sm:text-3xl" style="color: var(--color-foreground);">Highlights</h2>
+        <p class="mt-2 text-sm" style="color: var(--color-muted);">Key milestones and working paradigm</p>
+      </div>
       <div class="grid gap-6 sm:grid-cols-2 md:grid-cols-3">
         {#each highlights as h}
           <div class="rounded-xl border p-6 text-center sm:p-8" style="border-color: var(--color-border); background-color: var(--color-surface-light);">
@@ -232,28 +324,56 @@
       </div>
     </section>
 
-    <div class="border-t" style="border-color: var(--color-border);" id="stats"></div>
+    <div class="border-t" style="border-color: var(--color-border);" id="insights"></div>
 
-    <!-- GitHub Stats -->
+    <!-- GitHub Insights -->
     <section class="py-16 sm:py-24">
-      <h2 class="mb-10 text-center text-2xl font-bold sm:text-3xl" style="color: var(--color-foreground);">GitHub Insights</h2>
-      <div class="flex flex-col items-center gap-6 md:flex-row md:justify-center">
-        <img
-          src="https://github-readme-stats-sigma-five.vercel.app/api?username=reasvyn&show_icons=true&count_private=true&hide=prs&hide_border=true&bg_color=0d1117&text_color=ffffff&icon_color=58a6ff&title_color=ffffff"
-          alt="GitHub Stats"
-          class="gh-stat w-full max-w-md"
-        />
-        <img
-          src="https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=reasvyn&layout=compact&hide_border=true&bg_color=0d1117&text_color=ffffff&icon_color=58a6ff&title_color=ffffff"
-          alt="Top Languages"
-          class="gh-stat w-full max-w-md"
-        />
+      <div class="mb-10 text-center">
+        <h2 class="text-2xl font-bold sm:text-3xl" style="color: var(--color-foreground);">GitHub Insights</h2>
+        <p class="mt-2 text-sm" style="color: var(--color-muted);">Live profile telemetry and repository breakdown</p>
       </div>
-      <div class="mt-8 flex justify-center">
+      <div class="grid gap-6 sm:grid-cols-2">
+        <div class="flex justify-center rounded-xl border p-4 sm:p-6" style="border-color: var(--color-border); background-color: var(--color-surface-light);">
+          <img
+            src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=reasvyn&theme={summaryTheme}"
+            alt="Profile Details"
+            class="gh-stat w-full max-w-md h-auto"
+            loading="lazy"
+          />
+        </div>
+        <div class="flex justify-center rounded-xl border p-4 sm:p-6" style="border-color: var(--color-border); background-color: var(--color-surface-light);">
+          <img
+            src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=reasvyn&theme={summaryTheme}"
+            alt="GitHub Stats"
+            class="gh-stat w-full max-w-md h-auto"
+            loading="lazy"
+          />
+        </div>
+        <div class="flex justify-center rounded-xl border p-4 sm:p-6" style="border-color: var(--color-border); background-color: var(--color-surface-light);">
+          <img
+            src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=reasvyn&theme={summaryTheme}"
+            alt="Top Languages by Repo"
+            class="gh-stat w-full max-w-md h-auto"
+            loading="lazy"
+          />
+        </div>
+        <div class="flex justify-center rounded-xl border p-4 sm:p-6" style="border-color: var(--color-border); background-color: var(--color-surface-light);">
+          <img
+            src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=reasvyn&theme={summaryTheme}"
+            alt="Top Languages by Commit"
+            class="gh-stat w-full max-w-md h-auto"
+            loading="lazy"
+          />
+        </div>
+      </div>
+
+      <div class="mt-8 rounded-xl border p-4 sm:p-6 flex flex-col items-center" style="border-color: var(--color-border); background-color: var(--color-surface-light);">
+        <h3 class="mb-4 text-sm font-semibold uppercase tracking-wider" style="color: var(--color-muted);">GitHub Trophies</h3>
         <img
-          src="https://github-trophies.vercel.app/?username=reasvyn&theme=darkhub&no-frame=true&no-bg=true&margin-w=4"
+          src="https://github-trophies.vercel.app/?username=reasvyn&theme={trophyTheme}&no-frame=true&no-bg=true&margin-w=4"
           alt="GitHub Trophies"
-          class="gh-stat w-full max-w-3xl"
+          class="gh-stat w-full max-w-4xl h-auto"
+          loading="lazy"
         />
       </div>
     </section>
@@ -263,31 +383,34 @@
     <!-- Connect -->
     <section class="py-16 text-center sm:py-24">
       <h2 class="mb-4 text-2xl font-bold sm:text-3xl" style="color: var(--color-foreground);">Let's Connect</h2>
-      <p class="mb-10" style="color: var(--color-muted);">Following the quietest guidance to build a faithful impact.</p>
-      <div class="flex flex-wrap justify-center gap-4">
+      <p class="mb-10 text-base italic" style="color: var(--color-muted);">Following the quietest guidance to build a faithful impact. 🌿</p>
+      
+      <div class="grid gap-4 max-w-2xl mx-auto sm:grid-cols-2">
         {#each socialLinks as link}
           <a
             href={link.url}
             target="_blank"
             rel="noopener noreferrer"
-            class="inline-flex items-center gap-2 rounded-xl border px-6 py-3 text-sm font-medium transition-all"
-            style="border-color: var(--color-border); background-color: var(--color-surface-light); color: var(--color-muted);"
+            class="flex items-center justify-between rounded-xl border p-4 transition-all hover:border-(--color-accent) hover:translate-y-[-2px]"
+            style="border-color: var(--color-border); background-color: var(--color-surface-light);"
           >
-            {link.name}
+            <span class="font-semibold text-sm" style="color: var(--color-foreground);">{link.name}</span>
+            <span class="text-xs font-mono truncate max-w-[160px]" style="color: var(--color-muted);">{link.handle}</span>
           </a>
         {/each}
       </div>
 
-      <div class="mt-16">
-        <p class="mb-4 text-sm" style="color: var(--color-muted);">🫶 Thanks for supporting me on</p>
+      <div class="mt-16 rounded-2xl border p-8 max-w-lg mx-auto" style="border-color: var(--color-border); background-color: var(--color-surface-light);">
+        <p class="mb-2 text-sm font-medium" style="color: var(--color-foreground);">🫶 Thanks for supporting me on</p>
+        <p class="mb-6 text-xs" style="color: var(--color-muted);">Empower independent engineering & open source creation</p>
         <a
           href="https://sociabuzz.com/reasvyn/tribe"
           target="_blank"
           rel="noopener noreferrer"
-          class="inline-flex items-center gap-2 rounded-xl px-6 py-3 text-sm font-medium transition-all"
-          style="background-color: color-mix(in srgb, var(--color-accent) 15%, transparent); color: var(--color-accent);"
+          class="inline-flex items-center justify-center gap-2 rounded-xl px-8 py-3 text-sm font-semibold transition-all hover:opacity-90"
+          style="background-color: var(--color-accent); color: #ffffff;"
         >
-          SociaBuzz
+          Support on SociaBuzz
         </a>
       </div>
     </section>
