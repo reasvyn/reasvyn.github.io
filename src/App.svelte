@@ -100,8 +100,23 @@
     { name: 'Email', url: 'mailto:reasvyn@gmail.com', handle: 'reasvyn@gmail.com' },
   ];
 
-  const summaryTheme = $derived(theme === 'dark' ? 'dark' : 'default');
+  const bgColor = $derived(theme === 'dark' ? '161b22' : 'f6f8fa');
+  const textColor = $derived(theme === 'dark' ? 'f0f6fc' : '1f2328');
+  const mutedColor = $derived(theme === 'dark' ? '8b949e' : '656d76');
   const trophyTheme = $derived(theme === 'dark' ? 'darkhub' : 'flat');
+
+  const statsUrl = $derived(
+    `https://github-readme-stats-sigma-five.vercel.app/api?username=reasvyn&show_icons=true&count_private=true&hide_border=true&bg_color=${bgColor}&text_color=${textColor}&icon_color=2ea44f&title_color=2ea44f`
+  );
+  const topLangsUrl = $derived(
+    `https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=reasvyn&layout=compact&hide_border=true&bg_color=${bgColor}&text_color=${textColor}&title_color=2ea44f`
+  );
+  const streakUrl = $derived(
+    `https://streak-stats.demolab.com/?user=reasvyn&hide_border=true&background=${bgColor}&stroke=2ea44f&ring=2ea44f&fire=2ea44f&currStreakNum=${textColor}&sideNums=${textColor}&currStreakLabel=2ea44f&sideLabels=${mutedColor}&dates=${mutedColor}`
+  );
+  const trophiesUrl = $derived(
+    `https://github-trophies.vercel.app/?username=reasvyn&theme=${trophyTheme}&no-frame=true&no-bg=true&margin-w=4`
+  );
 </script>
 
 <div class="min-h-screen" style="background-color: var(--color-surface);">
@@ -333,35 +348,27 @@
         <p class="mt-2 text-sm" style="color: var(--color-muted);">Live profile telemetry and repository breakdown</p>
       </div>
       <div class="grid gap-6 sm:grid-cols-2">
-        <div class="flex justify-center rounded-xl border p-4 sm:p-6" style="border-color: var(--color-border); background-color: var(--color-surface-light);">
+        <div class="flex justify-center items-center rounded-xl border p-4 sm:p-6" style="border-color: var(--color-border); background-color: var(--color-surface-light);">
           <img
-            src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=reasvyn&theme={summaryTheme}"
-            alt="Profile Details"
-            class="gh-stat w-full max-w-md h-auto"
-            loading="lazy"
-          />
-        </div>
-        <div class="flex justify-center rounded-xl border p-4 sm:p-6" style="border-color: var(--color-border); background-color: var(--color-surface-light);">
-          <img
-            src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=reasvyn&theme={summaryTheme}"
+            src={statsUrl}
             alt="GitHub Stats"
             class="gh-stat w-full max-w-md h-auto"
             loading="lazy"
           />
         </div>
-        <div class="flex justify-center rounded-xl border p-4 sm:p-6" style="border-color: var(--color-border); background-color: var(--color-surface-light);">
+        <div class="flex justify-center items-center rounded-xl border p-4 sm:p-6" style="border-color: var(--color-border); background-color: var(--color-surface-light);">
           <img
-            src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=reasvyn&theme={summaryTheme}"
-            alt="Top Languages by Repo"
+            src={streakUrl}
+            alt="GitHub Streak"
             class="gh-stat w-full max-w-md h-auto"
             loading="lazy"
           />
         </div>
-        <div class="flex justify-center rounded-xl border p-4 sm:p-6" style="border-color: var(--color-border); background-color: var(--color-surface-light);">
+        <div class="flex justify-center items-center rounded-xl border p-4 sm:p-6 sm:col-span-2" style="border-color: var(--color-border); background-color: var(--color-surface-light);">
           <img
-            src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=reasvyn&theme={summaryTheme}"
-            alt="Top Languages by Commit"
-            class="gh-stat w-full max-w-md h-auto"
+            src={topLangsUrl}
+            alt="Top Languages"
+            class="gh-stat w-full max-w-lg h-auto"
             loading="lazy"
           />
         </div>
@@ -370,7 +377,7 @@
       <div class="mt-8 rounded-xl border p-4 sm:p-6 flex flex-col items-center" style="border-color: var(--color-border); background-color: var(--color-surface-light);">
         <h3 class="mb-4 text-sm font-semibold uppercase tracking-wider" style="color: var(--color-muted);">GitHub Trophies</h3>
         <img
-          src="https://github-trophies.vercel.app/?username=reasvyn&theme={trophyTheme}&no-frame=true&no-bg=true&margin-w=4"
+          src={trophiesUrl}
           alt="GitHub Trophies"
           class="gh-stat w-full max-w-4xl h-auto"
           loading="lazy"
