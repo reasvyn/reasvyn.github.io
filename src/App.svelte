@@ -443,7 +443,7 @@
         </div>
         <div class="flex items-center gap-2">
           <span class="inline-flex items-center gap-1.5 rounded-full px-2 py-0.5 text-[11px] font-medium" style="background-color: var(--color-accent-soft); color: var(--color-accent); border: 1px solid var(--color-border-accent);">
-            <span class="text-xs">🌿</span> COTTAGECORE CYBERNETICS
+            <span class="text-xs">🌿</span> THE CODE GARDEN
           </span>
         </div>
       </div>
@@ -462,7 +462,7 @@
               Reas Vyn
             </span>
             <span class="text-[9px] font-mono tracking-widest uppercase opacity-60 -mt-1 text-[var(--color-muted)]">
-              Digital Habitats
+              The Code Garden
             </span>
           </div>
         </a>
@@ -581,7 +581,7 @@
 
         <!-- Manifesto Subheading -->
         <p class="mt-6 max-w-2xl font-sans text-base sm:text-lg leading-relaxed" style="color: var(--color-muted);">
-          Hello, I am <strong class="font-medium text-[var(--color-foreground)]">Reas Vyn</strong> — a fullstack developer cultivating digital habitats rooted in cottagecore serenity, mathematical rigor, and neon vitality.
+          Hello, I am <strong class="font-medium text-[var(--color-foreground)]">Reas Vyn</strong> — a fullstack developer cultivating digital ecosystems in the <strong class="text-[var(--color-foreground)]">Code Garden</strong>, rooted in natural serenity, mathematical rigor, and neon vitality.
         </p>
 
         <!-- Editorial Doctrine Badges -->
@@ -1031,7 +1031,7 @@
         <div class="flex items-center gap-4 text-[11px]">
           <span>3S GOVERNED</span>
           <span>•</span>
-          <span>CYBER-COTTAGECORE</span>
+          <span>CODE GARDEN</span>
           <span>•</span>
           <button
             onclick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
