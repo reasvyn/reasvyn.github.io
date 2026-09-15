@@ -1,0 +1,40 @@
+name: Sync README to reasvyn/reasvyn
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'README.md'
+  workflow_dispatch:
+
+jobs:
+  sync-readme:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source repository (reasvyn.github.io)
+        uses: actions/checkout@v4
+
+      - name: Checkout target repository (reasvyn/reasvyn)
+        uses: actions/checkout@v4
+        with:
+          repository: 'reasvyn/reasvyn'
+          token: ${{ secrets.SYNC_TOKEN || secrets.GH_PAT || secrets.PAT || secrets.GITHUB_TOKEN }}
+          path: 'target-repo'
+
+      - name: Copy README.md
+        run: |
+          cp README.md target-repo/README.md
+
+      - name: Commit and push changes to reasvyn/reasvyn
+        working-directory: target-repo
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if [[ -n $(git status -s) ]]; then
+            git add README.md
+            git commit -m "docs: sync README from reasvyn.github.io"
+            git push origin main
+          else
+            echo "No changes in README.md detected. Skipping sync."
+          fi
