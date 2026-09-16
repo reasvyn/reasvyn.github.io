@@ -390,7 +390,7 @@
   ];
 
   const socialLinks = [
-    { name: 'Website', url: 'https://reasvyn.web.id', handle: 'reasvyn.web.id', note: 'Primary Domain' },
+    { name: 'Website', url: 'https://gh.reasvyn.web.id', handle: 'gh.reasvyn.web.id', note: 'Primary Domain' },
     { name: 'LinkedIn', url: 'https://www.linkedin.com/in/reasvyn', handle: 'in/reasvyn', note: 'Professional Network' },
     { name: 'Instagram', url: 'https://instagram.com/reasvyn', handle: '@reasvyn', note: 'Visual Field Notes' },
     { name: 'GitHub', url: 'https://github.com/reasvyn', handle: '@reasvyn', note: 'Source Repository' },
