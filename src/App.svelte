@@ -742,7 +742,7 @@
         <div class="mb-12 text-center reveal">
           <div class="inline-block text-xs font-mono tracking-widest uppercase text-[var(--color-accent)] mb-2">§ 02 — EXPERIENCE & COLLABORATION</div>
           <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-light text-[var(--color-foreground)]">
-            Experience with <span class="italic font-normal text-[var(--color-accent)]">HamzTech</span>
+            <span class="italic font-normal text-[var(--color-accent)]">Experience & Collaboration</span>
           </h2>
           <p class="mt-3 max-w-xl mx-auto text-sm leading-relaxed" style="color: var(--color-muted);">
             Building open-source ecosystems as Krewire founder and working as part of the HamzTech team to deliver reliable web, mobile, and digital systems.
