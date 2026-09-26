@@ -329,11 +329,15 @@
     {
       category: 'Krewire Founder',
       subtitle: 'Open Source Ecosystem',
+      url: 'https://github.com/krewire',
+      linkLabel: 'GitHub Profile',
       items: ['Unified Go Framework', 'Developer Tooling', 'AI Agent Workflows', 'Plugin & Package Registry'],
     },
     {
       category: 'HamzTech Team',
       subtitle: 'Collaborative Delivery',
+      url: 'https://hamztech.my.id',
+      linkLabel: 'Visit Website',
       items: ['Web Development', 'Mobile Apps', 'AI & Automation', 'Government Solutions'],
     },
     {
@@ -761,6 +765,16 @@
                 <h3 class="font-serif text-lg font-semibold text-[var(--color-foreground)]">
                   {experience.category}
                 </h3>
+                {#if experience.url}
+                  <a
+                    href={experience.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="mt-2 inline-flex items-center gap-1 text-[11px] font-mono text-[var(--color-accent)] hover:underline underline-offset-4"
+                  >
+                    {experience.linkLabel} <span>↗</span>
+                  </a>
+                {/if}
               </div>
 
               <div class="w-full border-t border-hairline mb-4"></div>
