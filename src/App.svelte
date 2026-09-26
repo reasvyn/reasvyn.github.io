@@ -281,7 +281,7 @@
 
   const navLinks = [
     { href: '#philosophy', num: '01', label: 'Philosophy' },
-    { href: '#tech', num: '02', label: 'Stack' },
+    { href: '#tech', num: '02', label: 'Experience' },
     { href: '#services', num: '03', label: 'Services' },
     { href: '#projects', num: '04', label: 'Works' },
     { href: '#highlights', num: '05', label: 'Field Notes' },
@@ -325,31 +325,36 @@
     },
   ];
 
-  const techStacks = [
+  const experienceItems = [
     {
-      category: 'Core Logic & Systems',
-      subtitle: 'Precision Backends',
-      items: ['Rust', 'TypeScript', 'PHP', 'Go'],
+      category: 'Krewire Founder',
+      subtitle: 'Open Source Ecosystem',
+      items: ['Unified Go Framework', 'Developer Tooling', 'AI Agent Workflows', 'Plugin & Package Registry'],
     },
     {
-      category: 'Frameworks & Habitats',
-      subtitle: 'Modern Interfaces',
-      items: ['Svelte 5', 'Laravel', 'Next.js', 'Astro', 'Tailwind CSS'],
+      category: 'HamzTech Team',
+      subtitle: 'Collaborative Delivery',
+      items: ['Web Development', 'Mobile Apps', 'AI & Automation', 'Government Solutions'],
     },
     {
-      category: 'Datastores & State',
-      subtitle: 'Reliable Persistence',
-      items: ['PostgreSQL', 'Redis', 'Event Sourcing', 'SQLite'],
+      category: 'Proven Track Record',
+      subtitle: '7+ Years of Practice',
+      items: ['24+ Projects', 'Production Systems', 'Business & Enterprise', 'Long-term Support'],
     },
     {
-      category: 'Infrastructure & Ops',
-      subtitle: 'Cloud & Environments',
-      items: ['Docker', 'Linux', 'AWS', 'CI/CD Pipelines'],
+      category: 'Government Systems',
+      subtitle: 'Public Sector Delivery',
+      items: ['10+ Government Apps', 'Ministry Platforms', 'Internal Services', 'Public Services'],
     },
     {
-      category: 'Engineering Craft',
-      subtitle: 'Architectural Rigor',
-      items: ['Clean Architecture', 'Domain-Driven Design (DDD)', 'TDD', '3S Governance'],
+      category: 'Product Domains',
+      subtitle: 'From Idea to Impact',
+      items: ['Investment Platforms', 'Procurement Systems', 'Travel & Booking', 'Health Applications'],
+    },
+    {
+      category: 'Core Technologies',
+      subtitle: 'Battle-tested Stack',
+      items: ['Laravel', 'Flutter', 'Vue / Nuxt', 'Go'],
     },
   ];
 
@@ -732,36 +737,36 @@
         <span class="absolute px-4 font-serif text-sm text-[var(--color-accent)]" style="background-color: var(--color-surface);">✦</span>
       </div>
 
-      <!-- SECTION 2: TECH STACK (Curated Digital Herbarium) -->
+      <!-- SECTION 2: EXPERIENCE (HamzTech Collaboration) -->
       <section id="tech" class="py-16 sm:py-24">
         <div class="mb-12 text-center reveal">
-          <div class="inline-block text-xs font-mono tracking-widest uppercase text-[var(--color-accent)] mb-2">§ 02 — THE DIGITAL HERBARIUM</div>
+          <div class="inline-block text-xs font-mono tracking-widest uppercase text-[var(--color-accent)] mb-2">§ 02 — EXPERIENCE & COLLABORATION</div>
           <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-light text-[var(--color-foreground)]">
-            Curated <span class="italic font-normal text-[var(--color-accent)]">Tools & Craft</span>
+            Experience with <span class="italic font-normal text-[var(--color-accent)]">HamzTech</span>
           </h2>
           <p class="mt-3 max-w-xl mx-auto text-sm leading-relaxed" style="color: var(--color-muted);">
-            Battle-tested instruments chosen for long-term health, uncompromising type-safety, and minimal computational footprint.
+            Building open-source ecosystems as Krewire founder and working as part of the HamzTech team to deliver reliable web, mobile, and digital systems.
           </p>
         </div>
 
         <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
-          {#each techStacks as stack, i}
+          {#each experienceItems as experience, i}
             <div
               class="editorial-card reveal stagger-{i + 1} flex flex-col rounded-xl p-5 sm:p-6"
             >
               <div class="mb-4">
                 <span class="text-[10px] font-mono tracking-widest uppercase text-[var(--color-accent)] block mb-1">
-                  {stack.subtitle}
+                  {experience.subtitle}
                 </span>
                 <h3 class="font-serif text-lg font-semibold text-[var(--color-foreground)]">
-                  {stack.category}
+                  {experience.category}
                 </h3>
               </div>
 
               <div class="w-full border-t border-hairline mb-4"></div>
 
               <ul class="space-y-2.5 mt-auto">
-                {#each stack.items as item}
+                {#each experience.items as item}
                   <li class="flex items-center gap-2 text-xs font-mono" style="color: var(--color-foreground);">
                     <span class="text-[var(--color-accent)]">✦</span>
                     <span class="font-sans text-sm" style="color: var(--color-muted);">{item}</span>
