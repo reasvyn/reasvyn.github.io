@@ -54,4 +54,4 @@ jobs:
         run: |
           mkdir -p ~/.ssh
           ssh-keyscan -p "$VPS_PORT" -H "$VPS_HOST" >> ~/.ssh/known_hosts
-          rsync -az --delete -e "ssh -p $VPS_PORT" dist/ "$VPS_USER@$VPS_HOST:$VPS_PATH/"
+          rsync -az --delete --omit-dir-times --rsync-path="sudo -n rsync" -e "ssh -p $VPS_PORT" dist/ "$VPS_USER@$VPS_HOST:$VPS_PATH/"
