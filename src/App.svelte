@@ -282,10 +282,11 @@
   const navLinks = [
     { href: '#philosophy', num: '01', label: 'Philosophy' },
     { href: '#tech', num: '02', label: 'Stack' },
-    { href: '#projects', num: '03', label: 'Works' },
-    { href: '#highlights', num: '04', label: 'Field Notes' },
-    { href: '#telemetry', num: '05', label: 'Telemetry' },
-    { href: '#dispatch', num: '06', label: 'Dispatch' },
+    { href: '#services', num: '03', label: 'Services' },
+    { href: '#projects', num: '04', label: 'Works' },
+    { href: '#highlights', num: '05', label: 'Field Notes' },
+    { href: '#telemetry', num: '06', label: 'Telemetry' },
+    { href: '#dispatch', num: '07', label: 'Dispatch' },
   ];
 
   const editorialBadges = [
@@ -349,6 +350,36 @@
       category: 'Engineering Craft',
       subtitle: 'Architectural Rigor',
       items: ['Clean Architecture', 'Domain-Driven Design (DDD)', 'TDD', '3S Governance'],
+    },
+  ];
+
+  const services = [
+    {
+      num: '01',
+      name: 'Static Site',
+      subtitle: 'A focused digital presence',
+      price: 'From $5',
+      unit: 'per page',
+      desc: 'Fast, responsive, and carefully crafted pages for portfolios, landing pages, and simple online presences.',
+      features: ['Responsive design', 'Performance-focused delivery', 'Clean, maintainable code'],
+    },
+    {
+      num: '02',
+      name: 'Professional',
+      subtitle: 'Simple business websites',
+      price: 'From $100',
+      unit: 'per project',
+      desc: 'A polished website for company profiles, personal brands, small businesses, and professional services.',
+      features: ['Multi-section website', 'Mobile-friendly layout', 'Contact and social integrations'],
+    },
+    {
+      num: '03',
+      name: 'Enterprise',
+      subtitle: 'Systems for growing needs',
+      price: 'From $300',
+      unit: 'per project',
+      desc: 'A scalable web foundation for organizations that need deeper content structures, integrations, and custom workflows.',
+      features: ['Custom architecture', 'Advanced integrations', 'Designed for future growth'],
     },
   ];
 
@@ -748,10 +779,59 @@
         <span class="absolute px-4 font-serif text-sm text-[var(--color-accent)]" style="background-color: var(--color-surface);">✦ 🌿 ✦</span>
       </div>
 
-      <!-- SECTION 3: SELECTED WORKS (Editorial Feature Story) -->
+      <!-- SECTION 3: WEB DEVELOPMENT SERVICES -->
+      <section id="services" class="py-16 sm:py-24">
+        <div class="mb-12 text-center reveal">
+          <div class="inline-block text-xs font-mono tracking-widest uppercase text-[var(--color-accent)] mb-2">§ 03 — WEB DEVELOPMENT SERVICES</div>
+          <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-light text-[var(--color-foreground)]">
+            Build Your <span class="italic font-normal text-[var(--color-accent)]">Digital Habitat</span>
+          </h2>
+          <p class="mt-3 max-w-xl mx-auto text-sm leading-relaxed" style="color: var(--color-muted);">
+            Clear packages for websites that are secure, sustainable, and ready to grow with your needs.
+          </p>
+        </div>
+
+        <div class="grid gap-6 md:grid-cols-3">
+          {#each services as service, i}
+            <div class="editorial-card reveal stagger-{i + 1} flex flex-col rounded-2xl p-7 sm:p-8">
+              <div class="flex items-center justify-between border-b border-hairline pb-4 mb-6">
+                <span class="font-serif text-2xl font-light text-[var(--color-accent)]">{service.num}.</span>
+                <span class="text-[10px] font-mono tracking-widest uppercase text-[var(--color-muted-dim)]">{service.subtitle}</span>
+              </div>
+
+              <h3 class="font-serif text-2xl font-semibold text-[var(--color-foreground)] mb-2">{service.name}</h3>
+              <div class="flex items-baseline gap-2 mb-4">
+                <span class="font-serif text-3xl text-[var(--color-accent)]">{service.price}</span>
+                <span class="text-xs font-mono text-[var(--color-muted)]">{service.unit}</span>
+              </div>
+              <p class="text-sm leading-relaxed mb-6" style="color: var(--color-muted);">{service.desc}</p>
+
+              <div class="border-t border-hairline pt-4 mt-auto">
+                <div class="text-[10px] font-mono uppercase tracking-widest text-[var(--color-muted-dim)] mb-2">Included:</div>
+                <ul class="space-y-2">
+                  {#each service.features as feature}
+                    <li class="flex items-center gap-2 text-xs" style="color: var(--color-foreground);">
+                      <span class="text-[var(--color-accent)]">✦</span>
+                      <span>{feature}</span>
+                    </li>
+                  {/each}
+                </ul>
+              </div>
+            </div>
+          {/each}
+        </div>
+      </section>
+
+      <!-- Section Divider -->
+      <div class="relative my-8 flex items-center justify-center">
+        <div class="w-full border-t border-hairline"></div>
+        <span class="absolute px-4 font-serif text-sm text-[var(--color-accent)]" style="background-color: var(--color-surface);">✦ 🌿 ✦</span>
+      </div>
+
+      <!-- SECTION 4: SELECTED WORKS (Editorial Feature Story) -->
       <section id="projects" class="py-16 sm:py-24">
         <div class="mb-12 text-center reveal">
-          <div class="inline-block text-xs font-mono tracking-widest uppercase text-[var(--color-accent)] mb-2">§ 03 — SELECTED WORKS & ARTIFACTS</div>
+          <div class="inline-block text-xs font-mono tracking-widest uppercase text-[var(--color-accent)] mb-2">§ 04 — SELECTED WORKS & ARTIFACTS</div>
           <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-light text-[var(--color-foreground)]">
             Featured <span class="italic font-normal text-[var(--color-accent)]">Folio</span>
           </h2>
@@ -822,10 +902,10 @@
         <span class="absolute px-4 font-serif text-sm text-[var(--color-accent)]" style="background-color: var(--color-surface);">✦</span>
       </div>
 
-      <!-- SECTION 4: FIELD NOTES & HIGHLIGHTS -->
+      <!-- SECTION 5: FIELD NOTES & HIGHLIGHTS -->
       <section id="highlights" class="py-16 sm:py-24">
         <div class="mb-12 text-center reveal">
-          <div class="inline-block text-xs font-mono tracking-widest uppercase text-[var(--color-accent)] mb-2">§ 04 — CHRONICLE & MILESTONES</div>
+          <div class="inline-block text-xs font-mono tracking-widest uppercase text-[var(--color-accent)] mb-2">§ 05 — CHRONICLE & MILESTONES</div>
           <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-light text-[var(--color-foreground)]">
             Field <span class="italic font-normal text-[var(--color-accent)]">Notes</span>
           </h2>
@@ -868,10 +948,10 @@
         <span class="absolute px-4 font-serif text-sm text-[var(--color-accent)]" style="background-color: var(--color-surface);">✦ 🌿 ✦</span>
       </div>
 
-      <!-- SECTION 5: TELEMETRY (Cyber-Botanical GitHub Analytics) -->
+      <!-- SECTION 6: TELEMETRY (Cyber-Botanical GitHub Analytics) -->
       <section id="telemetry" class="py-16 sm:py-24">
         <div class="mb-12 text-center reveal">
-          <div class="inline-block text-xs font-mono tracking-widest uppercase text-[var(--color-accent)] mb-2">§ 05 — LIVE PROFILE TELEMETRY</div>
+          <div class="inline-block text-xs font-mono tracking-widest uppercase text-[var(--color-accent)] mb-2">§ 06 — LIVE PROFILE TELEMETRY</div>
           <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-light text-[var(--color-foreground)]">
             Ecosystem <span class="italic font-normal text-[var(--color-accent)]">Telemetry</span>
           </h2>
@@ -961,10 +1041,10 @@
         <span class="absolute px-4 font-serif text-sm text-[var(--color-accent)]" style="background-color: var(--color-surface);">✦ 🌿 ✦</span>
       </div>
 
-      <!-- SECTION 6: DISPATCH & CORRESPONDENCE -->
+      <!-- SECTION 7: DISPATCH & CORRESPONDENCE -->
       <section id="dispatch" class="py-16 sm:py-24 text-center">
         <div class="reveal max-w-2xl mx-auto">
-          <div class="inline-block text-xs font-mono tracking-widest uppercase text-[var(--color-accent)] mb-2">§ 06 — DISPATCH & CHANNELS</div>
+          <div class="inline-block text-xs font-mono tracking-widest uppercase text-[var(--color-accent)] mb-2">§ 07 — DISPATCH & CHANNELS</div>
           <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-light text-[var(--color-foreground)]">
             Open for <span class="italic font-normal text-[var(--color-accent)]">Dialogue</span>
           </h2>
