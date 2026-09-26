@@ -370,7 +370,7 @@
       price: 'From $100',
       unit: 'per project',
       desc: 'A polished website for company profiles, personal brands, small businesses, and professional services.',
-      features: ['Multi-section website', 'Mobile-friendly layout', 'Contact and social integrations'],
+      features: ['Multi-section website', 'Mobile-friendly layout', 'Easy content management'],
     },
     {
       num: '03',
