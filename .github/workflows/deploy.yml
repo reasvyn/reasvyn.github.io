@@ -51,7 +51,10 @@ jobs:
           VPS_USER: ${{ secrets.VPS_USER }}
           VPS_PORT: ${{ secrets.VPS_PORT || '22' }}
           VPS_PATH: /var/www/reasvyn.web.id
+          RELEASE_ID: ${{ github.sha }}
         run: |
           mkdir -p ~/.ssh
           ssh-keyscan -p "$VPS_PORT" -H "$VPS_HOST" >> ~/.ssh/known_hosts
-          rsync -az --delete --omit-dir-times --rsync-path="sudo -n rsync" -e "ssh -p $VPS_PORT" dist/ "$VPS_USER@$VPS_HOST:$VPS_PATH/"
+          ssh -p "$VPS_PORT" "$VPS_USER@$VPS_HOST" "sudo -n mkdir -p '$VPS_PATH/releases/$RELEASE_ID'"
+          rsync -az --delete --omit-dir-times --exclude='CNAME' --exclude='.nojekyll' --rsync-path="sudo -n rsync" -e "ssh -p $VPS_PORT" dist/ "$VPS_USER@$VPS_HOST:$VPS_PATH/releases/$RELEASE_ID/"
+          ssh -p "$VPS_PORT" "$VPS_USER@$VPS_HOST" "sudo -n ln -sfn '$VPS_PATH/releases/$RELEASE_ID' '$VPS_PATH/current' && sudo -n find '$VPS_PATH/releases' -mindepth 1 -maxdepth 1 -type d ! -name '$RELEASE_ID' -printf '%T@ %p\\n' | sort -nr | tail -n +4 | cut -d' ' -f2- | xargs -r sudo -n rm -rf"
