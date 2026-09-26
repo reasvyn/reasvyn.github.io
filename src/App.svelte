@@ -746,17 +746,17 @@
         <div class="mb-12 text-center reveal">
           <div class="inline-block text-xs font-mono tracking-widest uppercase text-[var(--color-accent)] mb-2">§ 02 — EXPERIENCE & COLLABORATION</div>
           <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-light text-[var(--color-foreground)]">
-            <span class="italic font-normal text-[var(--color-accent)]">Experience & Collaboration</span>
+            Experience <span class="italic font-normal text-[var(--color-accent)]">& Collaboration</span>
           </h2>
           <p class="mt-3 max-w-xl mx-auto text-sm leading-relaxed" style="color: var(--color-muted);">
             Building open-source ecosystems as Krewire founder and working as part of the HamzTech team to deliver reliable web, mobile, and digital systems.
           </p>
         </div>
 
-        <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+        <div class="grid gap-6 md:grid-cols-3">
           {#each experienceItems as experience, i}
             <div
-              class="editorial-card reveal stagger-{i + 1} flex flex-col rounded-xl p-5 sm:p-6"
+              class="editorial-card reveal stagger-{i + 1} flex flex-col justify-between rounded-2xl p-7 sm:p-8"
             >
               <div class="mb-4">
                 <span class="text-[10px] font-mono tracking-widest uppercase text-[var(--color-accent)] block mb-1">
